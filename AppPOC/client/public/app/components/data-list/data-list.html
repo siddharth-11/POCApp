@@ -1,0 +1,66 @@
+﻿<div class="data-search-bar">
+    <input (keyup)="onSearch($event)" placeholder="Search on EquipmentID" type="text" />
+</div>
+<div style="overflow: auto; height:500px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>EquipmentId</th>
+                <th>SystemId</th>
+                <th>Serial</th>
+                <th>Country</th>
+                <th>FacilityId</th>
+                <th>SourceSystem</th>
+                <th>Modality</th>
+                <th>InstallationDate</th>
+                <th>LifeCycle</th>
+                <th>ContractNumber</th>
+                <th>ContractType</th>
+                <th>ContractStatus</th>
+                <th>ProductId</th>
+                <th>SystemDescription</th>
+                <th>ContractStartDate</th>
+                <th>ContractEndDate</th>
+                <th>UsingDepartment</th>
+                <th>OwningDepartment</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ng-for="#data of DataList">
+                <!--<td>
+                    <span class="badge">{{data}}</span>
+                </td>-->
+                <td>{{data.EquipmentId}} </td>
+                <td>{{data.SystemId}}</td>
+                <td>{{data.Serial}}</td>
+                <td>{{data.Country}}</td>
+                <td>{{data.FacilityId}}</td>
+                <td>{{data.SourceSystem}}</td>
+                <td>{{data.Modality}}</td>
+                <td>{{data.InstallationDate}}</td>
+                <td>{{data.InstallationDate}}</td>
+                <td>{{data.ContractNumber}}</td>
+                <td>{{data.ContractType}}</td>
+                <td>{{data.ContractStatus}}</td>
+                <td>{{data.ProductId}}</td>
+                <td>{{data.SystemDescription}}</td>
+                <td>{{data.ContractStartDate}}</td>
+                <td>{{data.ContractEndDate}}</td>
+                <td>{{data.UsingDepartment}}</td>
+                <td>{{data.OwningDepartment}}</td>
+
+                <td><a href="#" [router-link]="['/DataForm',{EquipmentId:data.EquipmentId}]"><span class="glyphicon glyphicon-pencil"></span> Edit</a> </td>
+                <td><a href="#" (click)="deleteData(data)"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<data-length [length]="data.length"></data-length>
+
+<div *ng-if="data.length === 0">
+   <p class="text-center">
+       <button class="btn btn-success" (click)="addData()">Add Data</button>
+   </p>
+</div>-->
